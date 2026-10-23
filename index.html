@@ -12,8 +12,9 @@
     <h1 class="text-2xl font-bold ">
     Cantina <span class="text-green-600 ">YouCode</span>
   </h1>
-  <button class="bg-gray-700 text-white px-4 py-2 rounded-md">
-    +Ajoute les recette </button>
+  <button id="ajoute" class="bg-gray-700 text-white px-4 py-2 rounded-md">
+    +Ajoute les recette 
+  </button>
   </header>
   <div class="grid grid-cols-2 md:grid-cols-4 gap-3 p-6">
     <div class="bg-[#e6d9d9] p-4 rounded-md  mt-6 ">
@@ -163,12 +164,58 @@
       </div>
     </div>
     </section>
-    <section class=" ">
+    <section class="w-full flex flex-col items-center static ">
       <h2 class="text-2xl font-serif font-semibold  mb-4 flex justify-center text-[#6c8b7e] italic ">reserve de recettes</h2>
-      <div class="bg-[#e6d9d9] p-4 rounded-md mb-3">
-        <p class="text-gray-400 italic flex justify-center "> aucune de recette . </p>
+      <div class="bg-[#e6d9d9] p-4 rounded-md max w-[70%] px-6">
+        <p class="text-gray-400 italic hidden justify-center "> aucune de recette . </p>
+        <div class=" ">
+          <div class="flex justify-between"><h3 class="bg-[#90cacf] px-5 py-1 rounded-full">tajin</h3><span class="bg-[#90cacf] px-5 py-1 rounded-full">25 <spane>DH</spane></span></div>
+        </div>
+        <div class="mt-4">
+          <span class="bg-[#ababab] px-5 py-1 rounded-full">Entrée</span>
+          <span class="bg-[#90cacf] px-5 py-1 rounded-full">Plat</span>
+        </div>
+        <div class="mt-2">
+          <span class="mr-4 text-lime-700"><button>Modifier</button></span><span class="text-rose-700"><button>Supprimer</button></span>
+        </div>
+      </div>
+      <div id="modal" class="hidden fixed inset-0 items-center justify-center bg-[#530669]/15 backdrop-blur-[14px] backdrop-saturate-[118%] border border-[#530669]/0 rounded-[0px] shadow-[0_8px_32px_0_rgba(0,0,0,0.2)]"> 
+      <div class="bg-blue-300 p-4 w-100  rounded-3xl ">
+        <div class="flex justify-between "><h3 class="italic pb-3 font-semibold font-serif">Nouvelle recette</h3><button id="annuler" class="bg-amber-300 w-8 rounded-3xl h-auto" >x</button></div>
+        <div class="flex flex-col">
+          <span class="nom">Nom de plat</span>
+          <input id="nomPlat" type="text" class=" bg-amber-200"  placeholder="entre le nom de plat"> 
+        </div>
+        <div class="flex flex-col">
+          <span class="">Catégorie</span>
+          <select id="categore" name="sss" id="" class=" bg-amber-200">
+            <option value="chisi">---choisi---</option>
+            <option value="entrée">Entrée</option>
+            <option value="Plat Prinsipale">Plat prisipale</option>
+            <option value="Desser">Desser</option>
+          </select>
+        </div>
+        <div class="flex flex-col">
+          <span >Prix (DH)</span>
+          <input id="Prix" type="text" class=" bg-amber-200"  placeholder="entre le nom de plat"> 
+        </div>
+        <div class="flex flex-col">
+          <span>Badge</span>
+          <select id="badge" name="" id="" class=" bg-amber-200">
+            <option value="Classique">Classique</option>
+            <option value="Bio">Bio</option>
+            <option value="Végétarien">Vegeratiy</option>
+          </select>
+        </div>
+        <div class="flex justify-between">
+          <button id="enrejste" class="bg-pink-400 border-lime-600 border-2 mt-5 rounded-md "> enrejstre</button>
+          <button id="annule" class="bg-fuchsia-400 border-lime-600 border-2 mt-5 rounded-md">annule</button>
+        </div>
+      </div>
+      </div>
     </section>
   </div>
   </main>
+  <script src="script.js"></script>
 </body>
 </html>
