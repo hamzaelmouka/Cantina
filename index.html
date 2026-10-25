@@ -170,7 +170,7 @@
           <div id="vide" class=" p-4  bg-amber-600 rounded-md max-w-[99%] px-6 ">
             <p  class="text-gray-400 italic flex justify-center "> aucune de recette . </p>
         </div>
-        <div id="liste" class=" bg-amber-600 p-1 rounded-md overflow-y-auto md:max-h-[324vh] lg:max-h-[112vh] "></div>
+        <div id="liste" class=" bg-amber-600 p-1 rounded-md overflow-y-auto sm:max-h-[100vh] md:max-h-[282vh] lg:max-h-[112vh] "></div>
      </section>
   </main>    
         <!-- <div class=" ">
@@ -190,31 +190,34 @@
         <div class="flex justify-between "><h3 class="italic pb-3 font-semibold font-serif">Nouvelle recette</h3><button id="annuler" class="bg-amber-300 w-8 rounded-3xl h-auto" >x</button></div>
         <div class="flex flex-col">
           <span class="nom">Nom de plat</span>
-          <input id="nomPlat" type="text" class=" bg-amber-200"  placeholder="entre le nom de plat"> 
+          <input id="nomPlat" type="text" class=" bg-amber-200"  placeholder="entre le nom de plat">
+          <p id="erreurNom" class="text-red-600 text-sm"></p> 
         </div>
         <div class="flex flex-col">
           <span class="">Catégorie</span>
           <select id="categore" name="sss" id="" class=" bg-amber-200">
-            <option value="chisi">---choisi---</option>
-            <option value="entrée">Entrée</option>
-            <option value="Plat Prinsipale">Plat prisipale</option>
+            <option value="">---choisi---</option>
+            <option value="Entrée">Entrée</option>
+            <option value="Plat prisipale">Plat prisipale</option>
             <option value="Desser">Desser</option>
           </select>
+          <p id="erreurCategorie" class="text-red-600 text-sm"></p>
         </div>
         <div class="flex flex-col">
           <span >Prix (DH)</span>
           <input id="Prix" type="number" min="1" class=" bg-amber-200"  placeholder="entre le nom de plat"> 
+          <p id="erreurPrix" class="text-red-600 text-sm"></p>
         </div>
         <div class="flex flex-col">
           <span>Badge</span>
           <select id="badge" name="" id="" class=" bg-amber-200">
             <option value="Classique">Classique</option>
             <option value="Bio">Bio</option>
-            <option value="Végétarien">Vegeratiy</option>
+            <option value="Vegeratiy">Vegeratiy</option>
           </select>
         </div>
         <div class="flex justify-between">
-          <button id="enrejste" class="bg-pink-400 border-lime-600 border-2 mt-5 rounded-md "> enrejstre</button>
+          <button id="enrejste" class="bg-pink-400 border-lime-600 border-2 mt-5 rounded-md disabled"> enrejstre</button>
           <button id="annule" class="bg-fuchsia-400 border-lime-600 border-2 mt-5 rounded-md">annule</button>
         </div>
       </div>
