@@ -6,169 +6,225 @@
   <link href="./output.css" rel="stylesheet">
   <link rel="icon" href="data:,">
   <title>cantine youcode</title>
+
 </head>
 <body class="bg-[#cdb3b4] ">
   <header class="flex justify-between items-center bg-[#d2a5a5] p-8">
     <h1 class="text-2xl font-bold ">
     Cantina <span class="text-green-600 ">YouCode</span>
   </h1>
-  <button class="bg-gray-700 text-white px-4 py-2 rounded-md">
-    +Ajoute les recette </button>
+  <button id="ajoute" class="hover:text-amber-400 bg-gray-700 text-white px-4 py-2 rounded-md">
+    +Ajoute les recette 
+  </button>
   </header>
   <div class="grid grid-cols-2 md:grid-cols-4 gap-3 p-6">
     <div class="bg-[#e6d9d9] p-4 rounded-md  mt-6 ">
       <p class="text-gray-500">plats en resereve</p>
-      <p class="text-2xl font-bold">0</p>
+      <p id="nbplats" class="text-2xl font-bold">0</p>
     </div>
     <div class="bg-[#e6d9d9] p-4 rounded-md  mt-6 ">
       <p class="text-gray-500">Jours prêts</p>
-      <p class="text-2xl font-bold">0/5</p>
+      <p class="text-2xl font-bold"> <span>0</span>/5</p>
     </div>
     <div class="bg-[#e6d9d9] p-4 rounded-md  mt-6 ">
       <p class="text-gray-500">Coût semaine </p>
-      <p class="text-2xl font-bold">0 DH</p>
+      <p  class="text-2xl font-bold"><span id="dh">0</span> DH</p>
     </div>
     <div class="bg-[#e6d9d9] p-4 rounded-md  mt-6 ">
       <p class="text-gray-500">Équilibre</p>
       <p class="text-2xl font-bold">Aucun</p>
     </div>
   </div>
-  <main class="p-6 gap-6 grid md:grid-cols-3 mt-8">
-    <section class="md:col-span-2">
+  <main class="p-6 gap-6 grid md:grid-cols-2 mt-8 lg:grid-cols-4 ">
+    <section class="md:col-span-1 lg:col-span-3">
       <h2 class="text-2xl font-serif font-semibold  mb-4 flex justify-center text-[#6c8b7e] italic "> menu de la semaine </h2>
-    <div class="grid md:grid-cols-2 gap-4">
-      <div class="bg-[#e6d9d9]  rounded-md mb-3 pt-4">
-        <h3 class="text-2xl font-serif px-4 font-semibold text-[#6c8b7e] italic ">lundi</h3>
-        <div class="mt-3 px-6 ">
-          <span class="bg-[#ababab] text-lg px-6 py-2 rounded-full">Entrée</span>
-          <select class="w-full bg-gray-100 p-2 rounded-md mt-2">
-            <option value="ekze">En reserve</option>
-          </select>
+      <div class="grid md:grid-cols-1 gap-4 lg:grid-cols-3">
+        <div  class="bg-[#e6d9d9]  rounded-md mb-3 pt-4">
+          <h3 class="text-2xl font-serif px-4 font-semibold text-[#6c8b7e] italic ">lundi</h3>
+          <div class="mt-3 px-6 ">
+            <span class="bg-[#ababab] text-lg px-6 py-2 rounded-full">Entrée</span>
+            <select  class="Entree w-full bg-gray-100 p-2 rounded-md mt-2">
+
+            </select>
+          </div>
+          <div class="mt-3 px-7">
+            <span class="bg-[#90cacf] text-lg px-6 py-2 rounded-full">Plat</span>
+            <select class="plat w-full bg-gray-100 p-2 rounded-md mt-2">
+
+            </select>
+          </div>
+          <div class="mt-3 px-7 ">
+            <span class="bg-[#f4bd99] text-lg px-6 py-2 rounded-full">Dessert</span>
+            <select  class="dess w-full bg-gray-100 p-2 rounded-md mt-2">
+            </select>
+          </div>
+          <div class="mt-6 pb-6 px-2">
+            <p class=""><span class="text-2xl font-serif text-[#9ab1a5] italic "> Total jour  : </span> <span id="DH1" class="text-xl font-semibold italic" >0</span> <span class="text-xl font-semibold italic">DH / 50 DH max</span></p>
+          </div>
         </div>
-        <div class="mt-3 px-7">
-          <span class="bg-[#90cacf] text-lg px-6 py-2 rounded-full">Plat</span>
-          <select class="w-full bg-gray-100 p-2 rounded-md mt-2">
-            <option value="ekze">En reserve</option>
-          </select>
-        </div>
-        <div class="mt-3 px-7 ">
-          <span class="bg-[#f4bd99] text-lg px-6 py-2 rounded-full">Dessert</span>
-          <select class="w-full bg-gray-100 p-2 rounded-md mt-2">
-            <option value="ekze">En reserve</option>
-          </select>
-        </div>
-        <div class="mt-6 pb-6 px-2">
-          <p class=""><span class="text-2xl font-serif text-[#9ab1a5] italic "> Total jour  : </span> <span class="text-xl font-semibold italic" >0</span> <span class="text-xl font-semibold italic">DH / 50 DH max</span></p>
-        </div>
-      </div>
       
-      <div class="bg-[#e6d9d9]  rounded-md mb-3 pt-4">
+       <div class="bg-[#e6d9d9]  rounded-md mb-3 pt-4">
         <h3 class="text-2xl font-serif px-4 font-semibold text-[#6c8b7e] italic ">Mardi</h3>
         <div class="mt-3 px-6 ">
-          <span class="bg-[#ababab] text-lg px-6 py-2 rounded-full">Entrée</span>
-          <select class="w-full bg-gray-100 p-2 rounded-md mt-2">
-            <option value="ekze">En reserve</option>
+          <span class=" bg-[#ababab] text-lg px-6 py-2 rounded-full">Entrée</span>
+          <select class="Entree w-full bg-gray-100 p-2 rounded-md mt-2">
+           
           </select>
         </div>
         <div class="mt-3 px-7">
           <span class="bg-[#90cacf] text-lg px-6 py-2 rounded-full">Plat</span>
-          <select class="w-full bg-gray-100 p-2 rounded-md mt-2">
-            <option value="ekze">En reserve</option>
+          <select class="plat w-full bg-gray-100 p-2 rounded-md mt-2">
+            
           </select>
         </div>
         <div class="mt-3 px-7 ">
           <span class="bg-[#f4bd99] text-lg px-6 py-2 rounded-full">Dessert</span>
-          <select class="w-full bg-gray-100 p-2 rounded-md mt-2">
-            <option value="ekze">En reserve</option>
+          <select class="dess w-full bg-gray-100 p-2 rounded-md mt-2">
+      
           </select>
         </div>
         <div class="mt-6 pb-6 px-2">
-          <p class=""><span class="text-2xl font-serif text-[#9ab1a5] italic "> Total jour  : </span> <span class="text-xl font-semibold italic" >0</span> <span class="text-xl font-semibold italic">DH / 50 DH max</span></p>
+          <p class=""><span class="text-2xl font-serif text-[#9ab1a5] italic "> Total jour  : </span> <span id="DH2" class="text-xl font-semibold italic" >0</span> <span class="text-xl font-semibold italic">DH / 50 DH max</span></p>
         </div>
-      </div>
+        </div>
 
-      <div class="bg-[#e6d9d9]  rounded-md mb-3 pt-4">
+       <div class="bg-[#e6d9d9]  rounded-md mb-3 pt-4">
         <h3 class="text-2xl font-serif px-4 font-semibold text-[#6c8b7e] italic ">Mercredi</h3>
         <div class="mt-3 px-6 ">
           <span class="bg-[#ababab] text-lg px-6 py-2 rounded-full">Entrée</span>
-          <select class="w-full bg-gray-100 p-2 rounded-md mt-2">
-            <option value="ekze">En reserve</option>
+          <select class="Entree w-full bg-gray-100 p-2 rounded-md mt-2">
+            <option value="">En reserve</option>
           </select>
         </div>
         <div class="mt-3 px-7">
           <span class="bg-[#90cacf] text-lg px-6 py-2 rounded-full">Plat</span>
-          <select class="w-full bg-gray-100 p-2 rounded-md mt-2">
-            <option value="ekze">En reserve</option>
+          <select class="plat w-full bg-gray-100 p-2 rounded-md mt-2">
+            <option value="">En reserve</option>
           </select>
         </div>
         <div class="mt-3 px-7 ">
           <span class="bg-[#f4bd99] text-lg px-6 py-2 rounded-full">Dessert</span>
-          <select class="w-full bg-gray-100 p-2 rounded-md mt-2">
-            <option value="ekze">En reserve</option>
+          <select class="dess w-full bg-gray-100 p-2 rounded-md mt-2">
+            <option value="">En reserve</option>
           </select>
         </div>
         <div class="mt-6 pb-6 px-2">
-          <p class=""><span class="text-2xl font-serif text-[#9ab1a5] italic "> Total jour  : </span> <span class="text-xl font-semibold italic" >0</span> <span class="text-xl font-semibold italic">DH / 50 DH max</span></p>
+          <p class=""><span class="text-2xl font-serif text-[#9ab1a5] italic "> Total jour  : </span> <span id="DH3" class="text-xl font-semibold italic" >0</span> <span class="text-xl font-semibold italic">DH / 50 DH max</span></p>
         </div>
-      </div>
+       </div>
 
-      <div class="bg-[#e6d9d9]  rounded-md mb-3 pt-4">
+       <div class="bg-[#e6d9d9]  rounded-md mb-3 pt-4">
         <h3 class="text-2xl font-serif px-4 font-semibold text-[#6c8b7e] italic ">Jeudi</h3>
         <div class="mt-3 px-6 ">
           <span class="bg-[#ababab] text-lg px-6 py-2 rounded-full">Entrée</span>
-          <select class="w-full bg-gray-100 p-2 rounded-md mt-2">
-            <option value="ekze">En reserve</option>
+          <select  class="Entree w-full bg-gray-100 p-2 rounded-md mt-2">
+            <option value="">En reserve</option>
           </select>
         </div>
         <div class="mt-3 px-7">
           <span class="bg-[#90cacf] text-lg px-6 py-2 rounded-full">Plat</span>
-          <select class="w-full bg-gray-100 p-2 rounded-md mt-2">
-            <option value="ekze">En reserve</option>
+          <select class="plat w-full bg-gray-100 p-2 rounded-md mt-2">
+            <option value="">En reserve</option>
           </select>
         </div>
         <div class="mt-3 px-7 ">
           <span class="bg-[#f4bd99] text-lg px-6 py-2 rounded-full">Dessert</span>
-          <select class="w-full bg-gray-100 p-2 rounded-md mt-2">
-            <option value="ekze">En reserve</option>
+          <select class="dess w-full bg-gray-100 p-2 rounded-md mt-2">
+            <option value="">En reserve</option>
           </select>
         </div>
         <div class="mt-6 pb-6 px-2">
-          <p class=""><span class="text-2xl font-serif text-[#9ab1a5] italic "> Total jour  : </span> <span class="text-xl font-semibold italic" >0</span> <span class="text-xl font-semibold italic">DH / 50 DH max</span></p>
+          <p class=""><span class="text-2xl font-serif text-[#9ab1a5] italic "> Total jour  : </span> <span id="DH4" class="text-xl font-semibold italic" >0</span> <span class="text-xl font-semibold italic">DH / 50 DH max</span></p>
         </div>
-      </div>
+       </div>
 
-      <div class="bg-[#e6d9d9]  rounded-md mb-3 pt-4">
+       <div class="bg-[#e6d9d9]  rounded-md mb-3 pt-4">
         <h3 class="text-2xl font-serif px-4 font-semibold text-[#6c8b7e] italic ">Vendredi</h3>
         <div class="mt-3 px-6 ">
           <span class="bg-[#ababab] text-lg px-6 py-2 rounded-full">Entrée</span>
-          <select class="w-full bg-gray-100 p-2 rounded-md mt-2">
-            <option value="ekze">En reserve</option>
+          <select class="Entree w-full bg-gray-100 p-2 rounded-md mt-2">
+            <option value="">En reserve</option>
           </select>
         </div>
         <div class="mt-3 px-7">
           <span class="bg-[#90cacf] text-lg px-6 py-2 rounded-full">Plat</span>
-          <select class="w-full bg-gray-100 p-2 rounded-md mt-2">
-            <option value="ekze">En reserve</option>
+          <select class="plat w-full bg-gray-100 p-2 rounded-md mt-2">
+            <option value="">En reserve</option>
           </select>
         </div>
         <div class="mt-3 px-7 ">
           <span class="bg-[#f4bd99] text-lg px-6 py-2 rounded-full">Dessert</span>
-          <select class="w-full bg-gray-100 p-2 rounded-md mt-2">
-            <option value="ekze">En reserve</option>
+          <select class="dess w-full bg-gray-100 p-2 rounded-md mt-2">
+            <option value="">En reserve</option>
           </select>
         </div>
         <div class="mt-6 pb-6 px-2">
-          <p class=""><span class="text-2xl font-serif text-[#9ab1a5] italic "> Total jour  : </span> <span class="text-xl font-semibold italic" >0</span> <span class="text-xl font-semibold italic">DH / 50 DH max</span></p>
+          <p class=""><span class="text-2xl font-serif text-[#9ab1a5] italic "> Total jour  : </span> <span id="DH5" class="text-xl font-semibold italic" >0</span> <span class="text-xl font-semibold italic">DH / 50 DH max</span></p>
+        </div>
         </div>
       </div>
-    </div>
     </section>
-    <section class=" ">
-      <h2 class="text-2xl font-serif font-semibold  mb-4 flex justify-center text-[#6c8b7e] italic ">reserve de recettes</h2>
-      <div class="bg-[#e6d9d9] p-4 rounded-md mb-3">
-        <p class="text-gray-400 italic flex justify-center "> aucune de recette . </p>
+     <section class=" static rounded-md ">
+        <div class="">
+          <h2 class="text-2xl font-serif font-semibold mb-4 text-center text-[#6c8b7e] italic">reserve de recettes</h2>
+          <div id="vide" class=" p-4  bg-amber-600 rounded-md max-w-[99%] px-6 ">
+            <p  class="text-gray-400 italic flex justify-center "> aucune de recette . </p>
+        </div>
+        <div id="liste" class=" bg-amber-600 p-1 rounded-md overflow-y-auto sm:max-h-[100vh] md:max-h-[282vh] lg:max-h-[112vh] "></div>
+     </section>
+  </main>    
+        <!-- <div class=" ">
+          <div class="flex justify-between"><h3 class="bg-[#90cacf] px-5 py-1 rounded-full">tajin</h3><span class="bg-[#90cacf] px-5 py-1 rounded-full">25 <spane>DH</spane></span></div>
+        </div>
+        <div class="mt-4">
+          <span class="bg-[#ababab] px-5 py-1 rounded-full">Entrée</span>
+          <span class="bg-[#90cacf] px-5 py-1 rounded-full">Plat</span>
+        </div>
+        <div class="mt-2">
+          <span class="mr-4 text-lime-700"><button>Modifier</button></span><span class="text-rose-700"><button>Supprimer</button></span>
+        </div>
+      </div> -->
+    <section>
+      <div id="modal" class="hidden fixed inset-0 items-center justify-center bg-[#530669]/15 backdrop-blur-[14px] backdrop-saturate-[118%] border border-[#530669]/0 rounded-[0px] shadow-[0_8px_32px_0_rgba(0,0,0,0.2)]"> 
+      <div class="bg-blue-300 p-4 w-100  rounded-3xl ">
+        <div class="flex justify-between "><h3 class="italic pb-3 font-semibold font-serif">Nouvelle recette</h3><button id="annuler" class="bg-amber-300 w-8 rounded-3xl h-auto" >x</button></div>
+        <div class="flex flex-col">
+          <span class="nom">Nom de plat</span>
+          <input id="nomPlat" type="text" class=" bg-amber-200"  placeholder="entre le nom de plat">
+          <p id="erreurNom" class="text-red-600 text-sm"></p> 
+        </div>
+        <div class="flex flex-col">
+          <span class="">Catégorie</span>
+          <select id="categore" name="sss" id="" class=" bg-amber-200">
+            <option value="">---choisi---</option>
+            <option value="Entrée">Entrée</option>
+            <option value="Plat prisipale">Plat prisipale</option>
+            <option value="Dessert">Desser</option>
+          </select>
+          <p id="erreurCategorie" class="text-red-600 text-sm"></p>
+        </div>
+        <div class="flex flex-col">
+          <span >Prix (DH)</span>
+          <input id="Prix" type="number" min="1" class=" bg-amber-200"  placeholder="entre le nom de plat"> 
+          <p id="erreurPrix" class="text-red-600 text-sm"></p>
+        </div>
+        <div class="flex flex-col">
+          <span>Badge</span>
+          <select id="badge" name="" id="" class=" bg-amber-200">
+            <option value="Classique">Classique</option>
+            <option value="Bio">Bio</option>
+            <option value="Vegeratiy">Vegeratiy</option>
+          </select>
+        </div>
+        <div class="flex justify-between">
+          <button id="enrejste" class="bg-pink-400 border-lime-600 border-2 mt-5 rounded-md disabled"> enrejstre</button>
+          <button id="annule" class="bg-fuchsia-400 border-lime-600 border-2 mt-5 rounded-md">annule</button>
+        </div>
+      </div>
+      </div>
     </section>
   </div>
   </main>
+  <script src="script.js"></script>
 </body>
 </html>
