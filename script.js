@@ -19,10 +19,16 @@ const nomPlat=document.getElementById("nomPlat");
 const categore=document.getElementById("categore");
 const Prix=document.getElementById("Prix");
 const badge=document.getElementById("badge");
-let valide=0;
-
+let valide=0 ;
+const nbplats=document.getElementById("nbplats");
 
 function ouvrirModal(){
+    nomPlat.value="";
+    Prix.value="";
+    categore.value="";
+    erreurNom.value="";
+    erreurCategorie.value="";
+    erreurPrix.value="";
     modal.classList.remove("hidden");
     modal.classList.add("flex");
     nomPlat.value="";
@@ -33,8 +39,8 @@ function fermerModal(){
     modal.classList.add("hidden")
 }
 
-const regexNom = /^[A-Za-zÀ-ÿ '\-]{3,30}$/
-const regexPrix = /^\d+(\.\d{1,2})?$/
+const regexNom = /^[A-Za-zÀ-ÿ '\-]{3,30}$/ ;
+const regexPrix = /^\d+$/ ;
 
 
 const erreurNom = document.getElementById("erreurNom");
@@ -113,6 +119,7 @@ modal.addEventListener("click",function(e){
                     r.badge=badge.value 
                 }
             })
+            valide=0;
         }else{
             Recettes.push({
             id: Date.now() ,
@@ -151,6 +158,7 @@ function afficher(){
         </div>
         </div>`
     })
+    nbplats.textContent=Recettes.length ;
 }
 liste.addEventListener("click",function(e){
 //     liste.addEventListener("click", function(e){
@@ -180,9 +188,7 @@ liste.addEventListener("click",function(e){
     })
     afficher();
 })
-afficher();
-
-
+afficher()
 
 
 // const sorter=document.getElementById("sorte")
@@ -205,8 +211,34 @@ afficher();
 // modal.addEventListener("click",function(){
 //      modal.classList.remove("flex");
 //     modal.classList.add("hidden")
-// })
 
+const Entree=document.querySelectorAll(".Entree");
+const plat=document.querySelectorAll(".plat")
+const dess=document.querySelectorAll(".dess")
+Recettes.forEach((r)=>{
+    if(r.categorie==="Plat prisipale"){
+        plat.forEach((s)=>{
+        s.innerHTML+=`
+        <option value="${r.id}">${r.nom}</option>
+        `;
+    })
+    }
+    if(r.categorie==="Entrée"){
+        Entree.forEach((s)=>{
+        s.innerHTML+=`
+        <option value="${r.id}">${r.nom}</option>
+        `;
+        });
+    }if(r.categorie==="Dessert"){
+        dess.forEach((s)=>{
+        s.innerHTML+=`
+        <option value="${r.id}">${r.nom}</option>
+        `});
+    }
+});
+
+
+// Entree.appendChild(div)
 
 
 
